@@ -115,6 +115,7 @@
 @media (max-width: 1024px) {
   .nav-links {
     gap: 1rem;
+    display: none;
   }
 
   .nav-links a {
@@ -134,16 +135,16 @@
     align-items: center;
     /* border: 1px solid green; */
     width: 100%;
-}
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 
 @media (max-width: 868px) {
   .nav-logo {
     font-size: 3.9rem;
-  }
-
-  .hamburger {
-    display: flex;
   }
 
   .nav-links {
