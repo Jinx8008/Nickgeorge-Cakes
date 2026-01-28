@@ -1,0 +1,32 @@
+:root {
+  font-family: NGCAKES, "Playfair Display", serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* padding-top: 80px; */
+  background: black;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Headings font */
+@font-face {
+  font-family: "NGCAKES";
+  src: url("./assets/fonts/BomstadFonts/BomstadDisplay-Black.woff2") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
