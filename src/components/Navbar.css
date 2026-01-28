@@ -115,11 +115,34 @@
 @media (max-width: 1024px) {
   .nav-links {
     gap: 1rem;
-    /* display: none; */
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px 30px;
+    gap: 18px;
+    width: 90%;
+    max-width: 300px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-links a {
     font-size: 1rem;
+    text-align: center;
   }
   .navbar {
     height: 125px;
@@ -147,33 +170,7 @@
     font-size: 3.9rem;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: column;
-    background: var(--glass-bg);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 20px 30px;
-    gap: 18px;
-    width: 90%;
-    max-width: 300px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.4s ease;
-  }
-
-  .nav-links.open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
   .nav-links a {
     font-size: 1.1rem;
-    text-align: center;
   }
 }
