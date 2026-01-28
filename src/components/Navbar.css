@@ -115,7 +115,7 @@
 @media (max-width: 1024px) {
   .nav-links {
     gap: 1rem;
-    display: none;
+    /* display: none; */
   }
 
   .nav-links a {
