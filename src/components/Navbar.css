@@ -24,6 +24,7 @@
   z-index: 999;
   border-radius: 60px;
   box-sizing: border-box;
+  /* border: 2px solid green; */
 }
 
 /* ─── LIQUID GLASS ─── */
@@ -46,7 +47,7 @@
   align-items: center;
   height: 100%;
   position: relative;
-  /* border: 2px solid red; */
+  border: 2px solid red;
 }
 
 /* ─── LOGO ─── */
@@ -108,12 +109,12 @@
   gap: 5px;
   cursor: pointer;
   padding: 4px;
-  /* border: 2px solid purple; */
+  border: 2px solid purple;
 }
 
 .hamburger span {
-  width: 35px;
-  height: 4px;
+  height: 10px;
+  width: 60px;
   background: var(--gold);
   border-radius: 4px;
   transition: all 0.35s ease;
@@ -232,8 +233,8 @@
     padding: 16px 20px;
   }
   .hamburger span {
-    width: 60px;
-    height: 9px;
+    /* width: 70px;
+    height: 10px; */
     
   }
   .hamburger{
