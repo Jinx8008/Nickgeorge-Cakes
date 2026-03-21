@@ -17,10 +17,10 @@
   top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 92%;
+  width: 98%;
   max-width: 1200px;
   padding: 0 28px;
-  height: 64px;
+  height: 90px;
   z-index: 999;
   border-radius: 60px;
   box-sizing: border-box;
@@ -38,6 +38,7 @@
     0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
     0 -1px 0px rgba(0, 0, 0, 0.3) inset,
     0 0 0 0.5px rgba(255,255,255,0.04) inset;
+    border: 2px solid blue;
 }
 
 /* ─── INNER CONTAINER ─── */
@@ -47,7 +48,7 @@
   align-items: center;
   height: 100%;
   position: relative;
-  /* border: 2px solid red; */
+  border: 2px solid red;
 }
 
 /* ─── LOGO ─── */
@@ -220,7 +221,7 @@
 @media (max-width: 480px) {
   .navbar {
     width: 94%;
-    height: 9%;
+    height: 17%;
     padding: 0 35px;
     border-radius: 20%, 0, 20%, 0;
   }
