@@ -106,7 +106,7 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 1px;
   cursor: pointer;
   padding: 4px;
   border: 2px solid purple;
@@ -115,6 +115,7 @@
 .hamburger span {
   height: 10px;
   width: 60px;
+  margin: 3px;
   background: var(--gold);
   border-radius: 4px;
   transition: all 0.35s ease;
