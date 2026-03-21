@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap'); */
 
 :root {
   --black: #0b0b0f;
@@ -17,10 +17,10 @@
   top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 98%;
+  width: 90%;
   max-width: 1200px;
   padding: 0 28px;
-  height: 90px;
+  height: 78px;
   z-index: 999;
   border-radius: 60px;
   box-sizing: border-box;
@@ -38,7 +38,7 @@
     0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
     0 -1px 0px rgba(0, 0, 0, 0.3) inset,
     0 0 0 0.5px rgba(255,255,255,0.04) inset;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 
 /* ─── INNER CONTAINER ─── */
@@ -48,18 +48,40 @@
   align-items: center;
   height: 100%;
   position: relative;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 /* ─── LOGO ─── */
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
+/* border: 2px solid red; */
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+
+
+
+  /* font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--gold);
   letter-spacing: 0.5px;
   text-shadow: 0 0 18px var(--gold-glow);
-  white-space: nowrap;
+  white-space: nowrap; */
+}
+
+.nav-logo img {
+  /* height: 60px; */
+  width: auto;
+}
+.logo-img-2 {
+  /* border: 2px solid blue; */
+  height: 35px;
+}
+.logo-img-1 {
+  /* border: 2px solid green; */
+  height: 60px;
+  margin-right: -8px;
 }
 
 /* ─── NAV LINKS (DESKTOP) ─── */
@@ -75,7 +97,7 @@
   font-family: 'Inter', sans-serif;
   color: rgba(255, 255, 255, 0.78);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.3px;
   position: relative;
@@ -87,7 +109,7 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -4px;
   width: 0%;
   height: 1.5px;
   background: linear-gradient(90deg, var(--gold), var(--gold-soft));
@@ -114,7 +136,7 @@
 }
 
 .hamburger span {
-  height: 10px;
+  height: 9px;
   width: 60px;
   margin: 3px;
   background: var(--gold);
@@ -138,8 +160,8 @@
 /* ─── TABLET & MOBILE ─── */
 @media (max-width: 1024px) {
   .navbar {
-    height: 8%;
-    padding: 0 24px;
+    height: 13%;
+    padding: 0 34px;
     border-radius: 60px;
   }
 
@@ -147,7 +169,7 @@
     display: flex;
   }
   .nav-logo {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .nav-links {
@@ -220,26 +242,31 @@
 /* ─── SMALL MOBILE ─── */
 @media (max-width: 480px) {
   .navbar {
-    width: 94%;
-    height: 17%;
-    padding: 0 35px;
-    border-radius: 20%, 0, 20%, 0;
+    width: 80%;
+    height: 10px; /* ✅ fixed from 1% */
+    padding: 0 20px;
+    border-radius: 20px; /* ✅ simplified, adjust to taste */
+  }
+
+  .glass-nav {
+    border-radius: 20px;
   }
 
   .nav-logo {
-    font-size: 3.8rem;
+    font-size: 1.6rem; /* ✅ 3.8rem is massive on mobile */
   }
 
   .nav-links {
     width: 94%;
     padding: 16px 20px;
   }
+
   .hamburger span {
-    /* width: 70px;
-    height: 10px; */
-    
+    width: 70px;
+    height: 10px;
   }
-  .hamburger{
+
+  .hamburger {
     gap: 7px;
   }
 }

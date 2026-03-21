@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import logo1 from "../assets/images/logo/IMG_7516-removebg-preview.png";
+import logo2 from "../assets/images/logo/Screenshot_20260128_102436_Gallery-removebg-preview-removebg-preview.png";
+import logo3 from "../assets/images/logo/Screenshot_20260128_102511_Gallery-removebg-preview.png";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -8,7 +12,10 @@ export default function Navbar() {
   return (
     <nav className="navbar glass-nav">
       <div className="nav-container">
-        <div className="nav-logo">NickGeorge Cakes</div>
+        <div className="nav-logo">
+          <img src={logo3} alt="NickGeorge Cakes Logo" className="logo-img-1" />
+           <img src={logo2} alt="NickGeorge Cakes Logo 2" className="logo-img-2" />
+        </div>
 
         {/* Hamburger */}
         <div
