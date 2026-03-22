@@ -160,10 +160,10 @@ height: 100%;
 /* ─── TABLET & MOBILE ─── */
 @media (max-width: 1024px) {
   .navbar {
-    height: 150px;
+    height: 170px;
     padding: 0 34px;
     border-radius: 60px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
 
   .hamburger {
