@@ -160,9 +160,10 @@ height: 100%;
 /* ─── TABLET & MOBILE ─── */
 @media (max-width: 1024px) {
   .navbar {
-    height: 90px;
+    height: 150px;
     padding: 0 34px;
     border-radius: 60px;
+    border: 2px solid green;
   }
 
   .hamburger {
@@ -243,7 +244,7 @@ height: 100%;
 @media (max-width: 480px) {
   .navbar {
     /* width: 80%; */
-    height: 10px; /* ✅ fixed from 1% */
+    height: 100px; /* ✅ fixed from 1% */
     padding: 0 20px;
     border-radius: 20px; /* ✅ simplified, adjust to taste */
   }
