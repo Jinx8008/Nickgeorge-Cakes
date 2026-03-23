@@ -35,19 +35,23 @@ export default function Hero() {
         {/* Glass Text Overlay */}
         <div className="glass-container">
           <div className="hero-text-overlay glass-box">
-            <h1>Fresh Cakes & Small Chops <span className="gold-accent">for Every Occasion</span></h1>
+            <p className="hero-eyebrow">NickGeorge Cakes</p>
+            <h1>Crafted with Passion.<span className="gold-accent"> Served with Excellence.</span></h1>
             <p>
-              We bake delicious cakes, pastries, and small chops for birthdays,
-              weddings, parties, and corporate events.
+              From show-stopping custom cakes to irresistible small chops —
+              we cater to birthdays, weddings, and corporate events with a touch of luxury.
             </p>
-            <a
-              href="https://wa.me/2348012345678?text=Hello%2C%20I%27d%20like%20to%20place%20an%20order"
-              target="_blank"
-              rel="noreferrer"
-              className="hero-btn"
-            >
-              Order on WhatsApp
-            </a>
+            <div className="hero-btn-group">
+              <a
+                href="https://wa.me/2348012345678?text=Hello%2C%20I%27d%20like%20to%20place%20an%20order"
+                target="_blank"
+                rel="noreferrer"
+                className="hero-btn"
+              >
+                Order on WhatsApp
+              </a>
+              <a href="/menu" className="hero-btn-outline">View Menu</a>
+            </div>
           </div>
         </div>
 
