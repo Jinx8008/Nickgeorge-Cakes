@@ -5,30 +5,29 @@
   --glass-border: rgba(255, 255, 255, 0.18);
 }
 
-/* HERO SECTION */
+/* ─── HERO SECTION ─── */
 .hero {
   min-height: 100vh;
-  /* background: radial-gradient(circle at top, #1a1a22, var(--black)); */
   display: flex;
-  align-items: flex-start;   /* ⬅ stop vertical centering */
+  align-items: flex-start;
   justify-content: center;
-  padding: 0;                /* ⬅ remove top spacing */
+  padding: 0;
   margin: 0;
   font-family: "MyLuxuryFont", sans-serif;
 }
 
-/* CAROUSEL CONTAINER */
+/* ─── CAROUSEL CONTAINER ─── */
 .hero-carousel {
   position: relative;
   width: 100%;
-  max-width: 100%;           /* ⬅ full width */
-  height: 95vh;             /* ⬅ full viewport height */
-  border-radius: 10px 10px 24px 24px;          /* ⬅ remove rounding at top */
+  max-width: 100%;
+  height: 95vh;
+  border-radius: 10px 10px 24px 24px;
   overflow: hidden;
-  box-shadow: none;          /* optional: cleaner top edge */
+  box-shadow: none;
 }
 
-/* SLIDES */
+/* ─── SLIDES ─── */
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -44,16 +43,32 @@
   transform: scale(1);
 }
 
-/* SHARED GLASS BOX */
-.glass-box {
-  background: var(--glass-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+/* ─── SCRIM — keeps text readable over any image ─── */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  pointer-events: none;
 }
 
-/* GLASS CONTAINER */
+/* ─── SHARED GLASS BOX — iOS liquid glass feel ─── */
+.glass-box {
+  background: rgba(10, 10, 12, 0.45);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 1.5px 0px rgba(255, 255, 255, 0.10) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset,
+    0 0 0 0.5px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* ─── GLASS CONTAINER ─── */
 .glass-container {
   position: absolute;
   top: 50%;
@@ -62,72 +77,139 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 90%;
+  max-width: 560px;
 }
 
-/* TEXT OVERLAY */
+/* ─── TEXT OVERLAY ─── */
 .hero-text-overlay {
-  max-width: 520px;
-  padding: 28px 30px;
-  border-radius: 20px;
+  width: 100%;
+  padding: 36px 38px;
+  border-radius: 24px;
   color: #fff;
   text-align: center;
+  /* float animation fixed — applied to overlay not container so transform isn't broken */
   animation: float 6s ease-in-out infinite;
 }
 
-/* HEADINGS */
+/* ─── GOLD ACCENT ON HEADING ─── */
+.gold-accent {
+  color: var(--gold);
+  display: block;
+}
+
+/* ─── HEADINGS ─── */
 .hero-text-overlay h1 {
-  font-size: 2.9rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 14px;
   color: #fff;
+  line-height: 1.25;
 }
 
 .hero-text-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #eee;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
 }
 
-/* BUTTON */
+/* ─── BUTTON ─── */
 .hero-btn {
+  display: inline-block;
   background: var(--gold);
   color: var(--black);
-  font-weight: 600;
-  padding: 12px 26px;
-  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 13px 30px;
+  border-radius: 14px;
   text-decoration: none;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 18px rgba(218, 164, 37, 0.35);
   transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
   background: #e5b900;
   transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(218, 164, 37, 0.55);
 }
 
-/* FLOAT ANIMATION */
+/* ─── SLIDE DOTS ─── */
+.hero-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-dot.active {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ─── FLOAT ANIMATION ─── */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
 
-/* RESPONSIVE */
+/* ─── DESKTOP ─── */
 @media (min-width: 1280px) {
   .glass-container {
     top: auto;
     left: 40px;
-    bottom: 40px;
+    bottom: 70px;
     transform: none;
     display: block;
+    width: auto;
   }
 
   .hero-text-overlay {
     text-align: left;
+    max-width: 520px;
+    /* re-apply float without breaking position */
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .gold-accent {
+    display: inline;
   }
 }
 
+/* ─── TABLET ─── */
 @media (max-width: 1279px) {
   .hero-text-overlay {
     max-width: 100%;
+  }
+}
+
+/* ─── MOBILE ─── */
+@media (max-width: 600px) {
+  .hero-text-overlay {
+    padding: 26px 22px;
+  }
+
+  .hero-text-overlay h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-text-overlay p {
+    font-size: 0.95rem;
   }
 }
