@@ -43,7 +43,7 @@ export default function Hero() {
             </p>
             <div className="hero-btn-group">
               <a
-                href="https://wa.me/2348012345678?text=Hello%2C%20I%27d%20like%20to%20place%20an%20order"
+                href="https://wa.me/2348060716930"
                 target="_blank"
                 rel="noreferrer"
                 className="hero-btn"
