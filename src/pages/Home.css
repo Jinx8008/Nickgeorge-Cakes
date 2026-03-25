@@ -1,64 +1,534 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap'); */
+
 .home {
-  /* padding-left: 2rem;
-  padding-right: 2rem; */
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(218, 164, 37, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 40%, rgba(184, 134, 11, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 75%, rgba(218, 164, 37, 0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 90%, rgba(184, 134, 11, 0.05) 0%, transparent 40%),
+    var(--black);
+  color: #fff;
+  overflow-x: hidden;
+  font-family: "MyLuxuryFont", sans-serif;
 }
 
+/* ─── SHARED SECTION LAYOUT ─── */
+.featured,
+.about-chef,
+.why-us,
+.testimonials,
+.cta {
+  position: relative;
+  padding: 100px 6%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── BACKGROUND BLOBS (make glass visible) ─── */
+.section-bg-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+}
+
+.blob-1 {
+  width: 500px; height: 500px;
+  background: var(--gold);
+  top: -100px; left: -150px;
+}
+.blob-2 {
+  width: 400px; height: 400px;
+  background: #b8860b;
+  bottom: -80px; right: -100px;
+}
+.blob-3 {
+  width: 600px; height: 600px;
+  background: var(--gold);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.blob-4 {
+  width: 450px; height: 450px;
+  background: var(--gold);
+  top: -80px; right: -100px;
+}
+.blob-5 {
+  width: 350px; height: 350px;
+  background: #b8860b;
+  bottom: -60px; left: -80px;
+}
+.blob-6 {
+  width: 500px; height: 500px;
+  background: var(--gold);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.12;
+}
+.blob-7 {
+  width: 700px; height: 700px;
+  background: var(--gold);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.14;
+}
+
+/* ─── EYEBROW LABEL ─── */
+.section-eyebrow {
+  display: inline-block;
+  font-family: "MyLuxuryFont", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+/* ─── SHARED HEADINGS ─── */
+.featured h2,
+.about-chef h2,
+.why-us h2,
+.testimonials h2,
+.cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+}
+
+.featured h2::after,
+.why-us h2::after,
+.testimonials h2::after,
+.cta h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft, #d4a843));
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+.section-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 10px;
+  margin-bottom: 52px;
+  line-height: 1.6;
+}
+
+/* ─── SHARED GLASS CARD ─── */
+.glass-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.25) inset,
+    0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
+}
+
+/* ─── FEATURED PRODUCTS ─── */
 .featured {
-  margin: 3rem 0;
+  background: transparent;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(218, 164, 37, 0.25);
+}
+
+.product-card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.product-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.product-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.65;
+}
+
+/* ─── ABOUT THE CHEF ─── */
+.about-chef {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-chef-inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  text-align: left;
+}
+
+.about-chef-text {
+  flex: 1;
+}
+
+.about-chef-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.about-chef-text h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft, #d4a843));
+  border-radius: 2px;
+  margin: 12px 0 0;
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+.about-chef-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.about-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(218, 164, 37, 0.5);
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.about-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+}
+
+/* Stats badge */
+.about-chef-badge {
+  flex-shrink: 0;
+  border-radius: 24px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 200px;
+}
+
+.badge-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.badge-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.5px;
   text-align: center;
 }
 
-.featured h2,
-.why-us h2,
-.cta h2 {
-  color: #8B4513;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+.badge-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.featured-grid,
+/* ─── WHY CHOOSE US ─── */
+.why-us {
+  background: transparent;
+}
+
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
 }
 
-.product-card,
 .why-card {
-  background-color: #f5f5f5;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.why-us {
-  margin: 3rem 0;
-  text-align: center;
-  background-color: #fffaf0;
-  padding: 2rem;
-  border-radius: 8px;
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(218, 164, 37, 0.25);
 }
 
+.why-card-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.why-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.why-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.65;
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 0;
+}
+
+.testimonial-card {
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-stars {
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #b8860b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.testimonial-role {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+/* ─── CTA ─── */
 .cta {
-  background: linear-gradient(135deg, #8B4513, #D2691E);
-  color: white;
-  padding: 3rem;
-  text-align: center;
-  border-radius: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cta p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.58);
+  margin-top: 12px;
+  margin-bottom: 40px;
+  line-height: 1.65;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-btn {
-  background-color: #FFD700;
-  color: #333;
-  padding: 0.8rem 2rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
   display: inline-block;
-  margin-top: 1rem;
-  transition: background-color 0.3s;
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 15px 38px;
+  border-radius: 14px;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 22px rgba(218, 164, 37, 0.4);
+  transition: all 0.3s ease;
 }
 
 .cta-btn:hover {
-  background-color: #FFC700;
+  background: #e5b900;
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(218, 164, 37, 0.6);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .about-chef-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .about-chef-text h2::after {
+    margin: 12px auto 0;
+  }
+
+  .about-chef-badge {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    padding: 24px 20px;
+    gap: 0;
+  }
+
+  .badge-stat {
+    flex: 1;
+  }
+
+  .badge-divider {
+    width: 1px;
+    height: auto;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured,
+  .about-chef,
+  .why-us,
+  .testimonials,
+  .cta {
+    padding: 70px 5%;
+  }
+
+  .featured h2,
+  .about-chef-text h2,
+  .why-us h2,
+  .testimonials h2,
+  .cta h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-grid,
+  .why-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
 }
