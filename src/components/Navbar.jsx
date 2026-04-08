@@ -25,8 +25,8 @@ export default function Navbar() {
       <nav className="navbar glass-nav">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src={logo3} alt="NickGeorge Cakes Logo" className="logo-img-1" />
-            <img src={logo2} alt="NickGeorge Cakes Logo 2" className="logo-img-2" />
+            <img src={logo3} alt="NikGeorge Cakes Logo" className="logo-img-1" />
+            <img src={logo2} alt="NikGeorge Cakes Logo 2" className="logo-img-2" />
           </div>
 
           {/* Hamburger */}

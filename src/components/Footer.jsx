@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>NickGeorge Cakes</h3>
+          <h3>NikGeorge Cakes</h3>
           <p>Delicious cakes and small chops for every occasion.</p>
         </div>
 
@@ -26,7 +26,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2026 NickGeorge Cakes. All rights reserved.</p>
+        <p>&copy; 2026 NikGeorge Cakes. All rights reserved.</p>
       </div>
     </footer>
   );

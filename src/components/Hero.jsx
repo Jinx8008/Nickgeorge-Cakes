@@ -35,7 +35,7 @@ export default function Hero() {
         {/* Glass Text Overlay */}
         <div className="glass-container">
           <div className="hero-text-overlay glass-box">
-            <p className="hero-eyebrow">NickGeorge Cakes</p>
+            <p className="hero-eyebrow">NikGeorge Cakes</p>
             <h1>Crafted with Passion.<span className="gold-accent"> Served with Excellence.</span></h1>
             <p>
               From show-stopping custom cakes to irresistible small chops —

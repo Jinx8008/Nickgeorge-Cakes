@@ -1,6 +1,18 @@
 import Hero from "../components/Hero";
 import "./Home.css";
 
+// ─── Product Icons ───
+import cakeIcon from "../assets/images/wedding-cake.png";
+import chinchinIcon from "../assets/images/cookie.png";
+import puffpuffIcon from "../assets/images/dounut.png";
+import meatpieIcon from "../assets/images/pie.png";
+
+// ─── Why Choose Us Icons ───
+import ingredientsIcon from "../assets/images/blend.png";
+import luxuryIcon from "../assets/images/diamond.png";
+import deliveryIcon from "../assets/images/clock.png";
+import customIcon from "../assets/images/sparkle.png";
+
 export default function Home() {
   return (
     <div className="home">
@@ -20,22 +32,30 @@ export default function Home() {
           </p>
           <div className="featured-grid">
             <div className="product-card">
-              <div className="product-card-icon">🎂</div>
+              <div className="product-card-icon">
+                <img src={cakeIcon} alt="Custom Cakes" />
+              </div>
               <h3>Custom Cakes</h3>
               <p>Show-stopping cakes designed for birthdays, weddings, and every celebration in between.</p>
             </div>
             <div className="product-card">
-              <div className="product-card-icon">🍪</div>
+              <div className="product-card-icon">
+                <img src={chinchinIcon} alt="Chinchin" />
+              </div>
               <h3>Chinchin</h3>
               <p>Golden, crunchy, and perfectly sweetened — a classic Nigerian snack done right.</p>
             </div>
             <div className="product-card">
-              <div className="product-card-icon">🍩</div>
+              <div className="product-card-icon">
+                <img src={puffpuffIcon} alt="Puff-Puff" />
+              </div>
               <h3>Puff-Puff</h3>
               <p>Light, fluffy, and irresistible. The crowd favourite at any event or gathering.</p>
             </div>
             <div className="product-card">
-              <div className="product-card-icon">🥧</div>
+              <div className="product-card-icon">
+                <img src={meatpieIcon} alt="Meat Pie" />
+              </div>
               <h3>Meat Pie</h3>
               <p>Freshly baked savory pastries with a rich, hearty filling — perfect for every occasion.</p>
             </div>
@@ -53,7 +73,7 @@ export default function Home() {
             <span className="section-eyebrow">Meet the Chef</span>
             <h2>Baked with Love, <span className="gold-text">Served with Pride</span></h2>
             <p>
-              At NickGeorge Cakes, every creation is a labour of love. With years of
+              At NikGeorge Cakes, every creation is a labour of love. With years of
               experience crafting custom cakes and small chops for events across the region,
               our chef brings artistry, precision, and passion to every single order.
             </p>
@@ -91,28 +111,36 @@ export default function Home() {
         </div>
         <div className="section-inner">
           <span className="section-eyebrow">Our Promise</span>
-          <h2>Why Choose NickGeorge?</h2>
+          <h2>Why Choose NikGeorge?</h2>
           <p className="section-sub">
             We don't just bake — we create experiences worth remembering.
           </p>
           <div className="why-grid">
             <div className="why-card">
-              <div className="why-card-icon">🌿</div>
+              <div className="why-card-icon">
+                <img src={ingredientsIcon} alt="Premium Ingredients" />
+              </div>
               <h4>Premium Ingredients</h4>
               <p>Every item is made with the finest, freshest ingredients — no shortcuts, ever.</p>
             </div>
             <div className="why-card">
-              <div className="why-card-icon">💰</div>
+              <div className="why-card-icon">
+                <img src={luxuryIcon} alt="Affordable Luxury" />
+              </div>
               <h4>Affordable Luxury</h4>
               <p>World-class quality at prices that won't break the bank. Elegance for everyone.</p>
             </div>
             <div className="why-card">
-              <div className="why-card-icon">⏱️</div>
+              <div className="why-card-icon">
+                <img src={deliveryIcon} alt="On-Time Delivery" />
+              </div>
               <h4>On-Time Delivery</h4>
               <p>We understand your timeline. Your order arrives fresh and exactly when you need it.</p>
             </div>
             <div className="why-card">
-              <div className="why-card-icon">✨</div>
+              <div className="why-card-icon">
+                <img src={customIcon} alt="Fully Customised" />
+              </div>
               <h4>Fully Customised</h4>
               <p>From flavours to designs — everything is tailored to your vision and your event.</p>
             </div>
@@ -146,7 +174,7 @@ export default function Home() {
             </div>
             <div className="testimonial-card glass-box">
               <p className="testimonial-text">
-                "NickGeorge catered our corporate event with small chops and it was a massive
+                "NikGeorge catered our corporate event with small chops and it was a massive
                 hit. Professional, punctual, and incredibly tasty. Highly recommended!"
               </p>
               <div className="testimonial-author">

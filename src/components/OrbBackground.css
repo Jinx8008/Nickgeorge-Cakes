@@ -1,0 +1,103 @@
+/* ─── ORB BACKGROUND SYSTEM ─── */
+
+/* LAYER 1 — Orb stage (bottom) */
+.orb-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--black);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(55px);
+  opacity: 0.7;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, #DAA425, #b8860b);
+  top: 10%;
+  left: 10%;
+  animation: orbMove1 14s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, #b8860b, #8B6010);
+  bottom: 15%;
+  right: 12%;
+  animation: orbMove2 12s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, #DAA425, #9a6e0a);
+  top: 45%;
+  left: 55%;
+  animation: orbMove3 15s ease-in-out infinite;
+}
+
+.orb-4 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #c8922a, #7a5208);
+  top: 25%;
+  left: 25%;
+  animation: orbMove4 11s ease-in-out infinite;
+}
+
+/* LAYER 2 — Frosted glass wall matching navbar glass recipe */
+.orb-glass-wall {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: var(--glass-bg-deep);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: none;
+  box-shadow:
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset,
+    0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
+  pointer-events: none;
+}
+
+/* LAYER 3 — Content wrapper (top) */
+.orb-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── ORB ANIMATIONS ─── */
+@keyframes orbMove1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(120px, 80px) scale(1.08); }
+  66%       { transform: translate(-60px, 140px) scale(0.95); }
+}
+
+@keyframes orbMove2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(-100px, -80px) scale(1.05); }
+  66%       { transform: translate(80px, -120px) scale(0.92); }
+}
+
+@keyframes orbMove3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  25%       { transform: translate(-140px, 60px) scale(1.1); }
+  50%       { transform: translate(-80px, -100px) scale(0.95); }
+  75%       { transform: translate(100px, -60px) scale(1.05); }
+}
+
+@keyframes orbMove4 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  40%       { transform: translate(100px, -80px) scale(1.08); }
+  70%       { transform: translate(-80px, 100px) scale(0.94); }
+}

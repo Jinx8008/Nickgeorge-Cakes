@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import OrbBackground from "./components/OrbBackground";
 
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
@@ -11,17 +12,19 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <Router>
-      <Navbar />
+      <OrbBackground>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </OrbBackground>
     </Router>
   );
 }

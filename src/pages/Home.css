@@ -1,15 +1,8 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
 
 .home {
-  background:
-    radial-gradient(ellipse at 15% 10%, rgba(218, 164, 37, 0.08) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 40%, rgba(184, 134, 11, 0.06) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 75%, rgba(218, 164, 37, 0.07) 0%, transparent 45%),
-    radial-gradient(ellipse at 10% 90%, rgba(184, 134, 11, 0.05) 0%, transparent 40%),
-    var(--black);
   color: #fff;
-  overflow-x: hidden;
-  font-family: "MyLuxuryFont", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* ─── SHARED SECTION LAYOUT ─── */
@@ -21,7 +14,6 @@
   position: relative;
   padding: 100px 6%;
   text-align: center;
-  overflow: hidden;
 }
 
 .section-inner {
@@ -29,66 +21,40 @@
   z-index: 2;
 }
 
-/* ─── BACKGROUND BLOBS (make glass visible) ─── */
-.section-bg-blobs {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+/* ─── SECTION DIVIDERS ─── */
+.featured,
+.about-chef,
+.why-us,
+.testimonials,
+.cta {
+  border-bottom: 1px solid transparent;
 }
 
-.blob {
+.featured::after,
+.about-chef::after,
+.why-us::after,
+.testimonials::after {
+  content: "";
+  display: block;
   position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.18;
-}
-
-.blob-1 {
-  width: 500px; height: 500px;
-  background: var(--gold);
-  top: -100px; left: -150px;
-}
-.blob-2 {
-  width: 400px; height: 400px;
-  background: #b8860b;
-  bottom: -80px; right: -100px;
-}
-.blob-3 {
-  width: 600px; height: 600px;
-  background: var(--gold);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-}
-.blob-4 {
-  width: 450px; height: 450px;
-  background: var(--gold);
-  top: -80px; right: -100px;
-}
-.blob-5 {
-  width: 350px; height: 350px;
-  background: #b8860b;
-  bottom: -60px; left: -80px;
-}
-.blob-6 {
-  width: 500px; height: 500px;
-  background: var(--gold);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.12;
-}
-.blob-7 {
-  width: 700px; height: 700px;
-  background: var(--gold);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.14;
+  bottom: 0;
+  left: 6%;
+  right: 6%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(218, 164, 37, 0.3) 20%,
+    rgba(218, 164, 37, 0.6) 50%,
+    rgba(218, 164, 37, 0.3) 80%,
+    transparent
+  );
 }
 
 /* ─── EYEBROW LABEL ─── */
 .section-eyebrow {
   display: inline-block;
-  font-family: "MyLuxuryFont", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 3px;
@@ -136,22 +102,18 @@
 
 /* ─── SHARED GLASS CARD ─── */
 .glass-box {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--glass-bg-deep);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 8px 32px rgba(0, 0, 0, 0.5),
     0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
-    0 -1px 0px rgba(0, 0, 0, 0.25) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset,
     0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
 }
 
 /* ─── FEATURED PRODUCTS ─── */
-.featured {
-  background: transparent;
-}
-
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -159,14 +121,15 @@
 }
 
 .product-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--glass-bg-deep);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 8px 32px rgba(0, 0, 0, 0.5),
     0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
-    0 -1px 0px rgba(0, 0, 0, 0.25) inset;
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset,
+    0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
   border-radius: 20px;
   padding: 32px 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -176,12 +139,19 @@
   transform: translateY(-6px);
   box-shadow:
     0 20px 48px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(218, 164, 37, 0.25);
+    0 0 0 1px rgba(218, 164, 37, 0.25),
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset;
 }
 
 .product-card-icon {
-  font-size: 2.4rem;
   margin-bottom: 16px;
+}
+
+.product-card-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .product-card h3 {
@@ -201,11 +171,6 @@
 }
 
 /* ─── ABOUT THE CHEF ─── */
-.about-chef {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
 .about-chef-inner {
   display: flex;
   align-items: center;
@@ -309,10 +274,6 @@
 }
 
 /* ─── WHY CHOOSE US ─── */
-.why-us {
-  background: transparent;
-}
-
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -320,14 +281,15 @@
 }
 
 .why-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--glass-bg-deep);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 8px 32px rgba(0, 0, 0, 0.5),
     0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
-    0 -1px 0px rgba(0, 0, 0, 0.25) inset;
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset,
+    0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
   border-radius: 20px;
   padding: 32px 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -337,12 +299,19 @@
   transform: translateY(-6px);
   box-shadow:
     0 20px 48px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(218, 164, 37, 0.25);
+    0 0 0 1px rgba(218, 164, 37, 0.25),
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset;
 }
 
 .why-card-icon {
-  font-size: 2rem;
   margin-bottom: 16px;
+}
+
+.why-card-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .why-card h4 {
@@ -362,27 +331,36 @@
 }
 
 /* ─── TESTIMONIALS ─── */
-.testimonials {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-top: 0;
 }
 
 .testimonial-card {
+  background: var(--glass-bg-deep);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset,
+    0 0 0 0.5px rgba(255, 255, 255, 0.04) inset;
   border-radius: 20px;
   padding: 32px 28px;
   text-align: left;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
   transform: translateY(-5px);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(218, 164, 37, 0.25),
+    0 1.5px 0px rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0px rgba(0, 0, 0, 0.3) inset;
 }
 
 .testimonial-stars {
@@ -439,10 +417,6 @@
 }
 
 /* ─── CTA ─── */
-.cta {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
 .cta p {
   font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
